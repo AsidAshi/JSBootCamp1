@@ -95,3 +95,58 @@
 // var getAddress = obj1.getAddress;
 // var obj2 = { name: "akshay" };
 // obj2.getAddress();
+
+// script.js:97 Uncaught TypeError: obj2.getAddress is not a function
+
+// QS - 16 
+
+
+
+
+
+
+
+//  QS - 21
+
+// a)
+
+// function real() {
+//     console.log("I am real. Always run me");
+// }
+// function real() { console.log("No I am real one "); }
+// real();
+
+// function real() {
+//     console.log("You both are wasted");
+// }
+
+// You both are wasted
+
+// b)
+
+// var b = 1;
+// function outer() {
+//     var b = 2;
+//     function inner() {
+//         b++;
+//         console.log(b);
+//         var b =
+//             console.log(b);
+//     }
+//     inner();
+// }
+// outer()
+
+// NaN
+
+// c)
+
+// var d = 1; function test() {
+//     d = "2"; console.log(typeof d);
+//     function d() { }
+// }
+// test()
+// console.log(typeof d)
+
+// string
+// number
