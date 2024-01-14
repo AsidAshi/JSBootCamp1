@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>JS boot camp</title>
+</head>
+
+<body>
+    <h1>Js -BootCamp answers</h1>
+    <a>QS _ 1,2 ,14 in consoles </a>
+    <h3>QS - 4 </h3>
+    <p>== Equality Operator, means the equality comparison is based on values after type coercion.it will attempt to
+        convert one or both of the values into a common type.
+    </p>
+    <p> === Strict Equality Operator, it doesn't perform type coercion, and checks for both value and type equality</p>
+    <h3>QS - 5 </h3>
+    <p>var and let are both used for variable declarations,by the scope - var is function-scoped and let is block-scoped
+    </p>
+    <p>var is hoisted in top of their scope. we can use a variable before declarations hows undefined , in case of let
+        it is not initialized , so variable before its declaration shows ReferenceError.</p>
+    <p> var allows re-declaration of the same variable within the same scope but let does'nt </p>
+    <h3>QS - 6 </h3>
+    <p>Implicit type coercion - automatic conversion of data types, </p>
+    <p>eg :
+        let num = 2;
+        let str = "10";
+        let result = num + str;
+
+        result becomes - '210'
+        here + operator is used for string concatenation.
+    </p>
+    <h3>QS - 7</h3>
+    <p>JS is considered a dynamically typed language</p>
+    <h3>QS - 8</h3>
+    <p>NaN -Not a Number, its a special value , means result of an operation that should return a number but doesn't</p>
+    <h3>QS - 9</h3>
+    <p>"pass by value"- the actual value of the var is passed to function, here copy of the data is made, and changes to
+        the parameter inside that function do not affect the org variable outside the function</p>
+    <p>pass by reference"- a reference or memory address of the variable is passed to function. Changes to the param
+        inside the function affect the original var outside the function</p>
+    <h3>QS - 10</h3>
+    <p>Immediately Invoked - it is a function that is defined and executed immediately after its creation, used to
+        encapsulate code</p>
+    <h3>QS - 11</h3>
+    <p>Strict mode - it enhances error-checking and security</p>
+    <p>Error handling, Eliminates coercion of 'this',No duplicate parameter names </p>
+
+    <h3>QS - 12</h3>
+    <p>Higher order func - functions that can be assigned to variables, passed as arguments, and returned from other
+        functions</p>
+
+    <h3>QS - 13</h3>
+    <p>this - keyword refers to the context in which a function is executed</p>
+    <p>regular function, this refers to the global object </p>
+
+
+    <h3>QS - 15</h3>
+    <p>these methods are used to manipulate the this value inside a function</p>
+    <p>call- is used to invoke a function with a specific this context and allows passing arguments individually</p>
+    <p>apply- method is similar to call(), but it allows passing arguments as an array</p>
+    <p> bind - it returns a new function that can be called later</p>
+
+    <h3>QS - 17</h3>
+    <p>Currying - each function in the sequence returns a new function that expects the next argument. This process
+        continues until all arguments are provided, and the final function produces the result</p>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
