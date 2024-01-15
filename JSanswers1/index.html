@@ -9,7 +9,7 @@
 
 <body>
     <h1>Js -BootCamp answers</h1>
-    <a>QS _ 1,2 ,14 in consoles </a>
+    <a>QS _ 1,2 ,14 ,16, 21 in JS file </a>
     <h3>QS - 4 </h3>
     <p>== Equality Operator, means the equality comparison is based on values after type coercion.it will attempt to
         convert one or both of the values into a common type.
@@ -23,14 +23,14 @@
     <p> var allows re-declaration of the same variable within the same scope but let does'nt </p>
     <h3>QS - 6 </h3>
     <p>Implicit type coercion - automatic conversion of data types, </p>
-    <p>eg :
+    <pre><code>eg :
         let num = 2;
         let str = "10";
         let result = num + str;
 
         result becomes - '210'
         here + operator is used for string concatenation.
-    </p>
+    </code></pre>
     <h3>QS - 7</h3>
     <p>JS is considered a dynamically typed language</p>
     <h3>QS - 8</h3>
@@ -43,7 +43,7 @@
     <h3>QS - 10</h3>
     <p>Immediately Invoked - it is a function that is defined and executed immediately after its creation, used to
         encapsulate code</p>
-        <p></p>
+    <p></p>
     <h3>QS - 11</h3>
     <p>Strict mode - it enhances error-checking and security</p>
     <p>Error handling, Eliminates coercion of 'this',No duplicate parameter names </p>
@@ -66,9 +66,69 @@
     <h3>QS - 17</h3>
     <p>Currying - each function in the sequence returns a new function that expects the next argument. This process
         continues until all arguments are provided, and the final function produces the result</p>
-        
-        <h3>QS - 20</h3>
-        
+
+    <h3>QS - 18</h3>
+    <p>scope is the accessibility of variables and functions at various parts of code</p>
+    <p>Global Scope - it can be accessed from any part of the code</p>
+    <pre><code>var globalVar = "it is global";
+
+        function exampleFunction() {
+        console.log(globalVar);
+        }
+
+        exampleFunction()
+        console.log(globalVar) </code></pre>
+    <p>Local Scope - it can only accessible within that function or block</p>
+    <pre><code>function exampleFunction() {
+        var localVar = "I am local";
+        console.log(localVar);
+        }
+
+        exampleFunction()</code></pre>
+    <p>Scope Chain - sequence of nested scopes is known as the scope chain</p>
+    <pre><code>var globalVar = "I am global";
+
+        function outerFunction() {
+        var outerVar = "I am outer";
+
+        function innerFunction() {
+        var innerVar = "I am inner";
+        console.log(innerVar);
+        console.log(outerVar);
+        console.log(globalVar);
+        // all variable accessible here..
+        }
+
+        innerFunction();
+        //innerVar is not accessible here
+        }
+
+        outerFunction();
+        //outerVar & innerVar not accessible here
+    </code></pre>
+    <h3>QS - 19</h3>
+    <p>closure gives the access to outer function's scope from an inner function. and this closure created every time a
+        function is created at function creation time.</p>
+        <pre><code>function func() {
+        const name = "Asid";
+        function displayName() {
+        console.log(name);
+        }
+        return displayName;
+        }
+
+        const myFunc = func();
+        myFunc();</code></pre>
+    <h3>QS - 20</h3>
+    <p> prototypes - objects can inherit properties and methods from other object</p>
+    <pre><code>function Dog(name) {
+        this.name = name;
+        }
+
+        var myDog = new Dog("Buddy");
+
+        console.log(Dog.prototype);
+        console.log(myDog.prototype);</code></pre>
 
     <script src="script.js"></script>
 </body>

@@ -98,17 +98,75 @@
 
 // script.js:97 Uncaught TypeError: obj2.getAddress is not a function
 
-// QS - 16 
+// // QS - 16 
 
+// // call
+// Function.prototype.myCall = function(context, ...args) {
 
+//     const uniqueID = 'myCall_' + Math.floor(Math.random() * 1000);
+//     context[uniqueID] = this; 
 
+//     const result = context[uniqueID](...args); 
 
+//     delete context[uniqueID]; 
 
+//     return result; 
+//   };
 
+//   function greet(message) {
+//     console.log(`${message}, ${this.name}!`);
+//   }
 
-//  QS - 21
+//   const person = { name: 'devs' };
+//   greet.myCall(person, 'Hello');
 
-// a)
+// // apply
+
+// Function.prototype.myApply = function(context, argsArray) {
+
+//     const uniqueID = Symbol()
+//     context[uniqueID] = this
+
+//     const result = context[uniqueID](...argsArray)
+
+//     delete context[uniqueID]
+
+//     return result
+//   };
+
+//   function sum(a, b) {
+//     return this.value + a + b;
+//   }
+
+//   const calculator = { value: 10 };
+//   const args = [5, 7];
+//   const result = sum.myApply(calculator, args);
+
+//   console.log(result); 
+
+// //bind 
+
+// Function.prototype.myBind = function (context, ...args) {
+//     const originalFunction = this;
+
+//     return function (...newArgs) {
+//         return originalFunction.apply(context, [...args, ...newArgs]);
+//     };
+// };
+
+// function product(a, b, c) {
+//     return this.value * a * b * c;
+// }
+
+// const multiplier = { value: 2 };
+// const multiplyByTwo = product.myBind(multiplier, 2);
+
+// const result = multiplyByTwo(3, 4);
+// console.log(result);
+
+// // QS - 21
+
+// // a)
 
 // function real() {
 //     console.log("I am real. Always run me");
