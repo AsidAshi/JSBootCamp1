@@ -109,7 +109,7 @@
     <h3>QS - 19</h3>
     <p>closure gives the access to outer function's scope from an inner function. and this closure created every time a
         function is created at function creation time.</p>
-        <pre><code>function func() {
+    <pre><code>function func() {
         const name = "Asid";
         function displayName() {
         console.log(name);
@@ -129,7 +129,62 @@
 
         console.log(Dog.prototype);
         console.log(myDog.prototype);</code></pre>
+    <h3>---------------------</h3>
+    <h3>Throttling and Debouncing</h3>
+    <p> Throttling: Throttling typically involves setting a fixed interval between function calls using timers or
+        timestamps to track the last invocation time. Debouncing: Debouncing involves starting a timer when an event
+        occurs and resetting the timer whenever a new event occurs within the delay period</p>
+    <h4>Throttling</h4>
+    <pre><code>function throttle(func, delay) {
+        let lastCall = 0;
+      
+        return function (...args) {
+          const now = Date.now();
+      
+          if (now - lastCall >= delay) {
+            func.apply(this, args);
+            lastCall = now;
+          }
+        };
+      }
+      
+      function printMessage(message) {
+        console.log(message);
+      }
+      
+      const throttledPrint = throttle(printMessage, 1000);
+      
+      setInterval(() => {
+        throttledPrint("This message is throttled and won't be printed too often.");
+      }, 100);</code></pre>
+    <h4>Debouncing</h4>
+    <pre>
+        <code>
+            function debounce(func, delay) {
+                let timeoutId;
+              
+                return function (...args) {
+                  clearTimeout(timeoutId);
+              
+                  timeoutId = setTimeout(() => {
+                    func(...args);
+                  }, delay);
+                };
+              }
+              
+              function handleInput(input) {
+                console.log(`Handling input: ${input}`);
+              }
+              
+              const debouncedHandleInput = debounce(handleInput, 500);
+              
+              setInterval(() => {
+                const userInput = Math.random().toString(36).substring(7);
+                debouncedHandleInput(userInput);
+              }, 100);
+        </code>
 
+      </pre>
     <script src="script.js"></script>
 </body>
 

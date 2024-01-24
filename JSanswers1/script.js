@@ -208,3 +208,30 @@
 
 // string
 // number
+
+
+// asynctask runs parellel in 
+async function processTaskA() {
+    return new Promise(resolve => setTimeout(() => resolve('Task A completed'), 1200));
+  }
+  
+  async function processTaskB() {
+    return new Promise(resolve => setTimeout(() => resolve('Task B completed'), 800));
+  }
+  
+  async function processTaskC() {
+    return new Promise(resolve => setTimeout(() => resolve('Task C completed'), 1500));
+  }
+  
+  async function runParallelTasks() {
+    try {
+      const [resultA, resultB, resultC] = await Promise.all([processTaskA(), processTaskB(), processTaskC()]);
+      console.log(resultA);
+      console.log(resultB);
+      console.log(resultC);
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
+  }
+  
+  runParallelTasks();
